@@ -19,7 +19,7 @@ Feature: One-liner description of this feature
   @focus
   Scenario: This scenario will run on both dev and CI
     When I navigate to "/"
-    Then I should see the title "intentional failure"
+    Then I should see the title "cucumber-tutorial"
 
   # This scenario will not run as part of the Meteor dev cycle because it does not have the @focus
   # tag, but it will run on CI if you use `meteor --test` for instance
