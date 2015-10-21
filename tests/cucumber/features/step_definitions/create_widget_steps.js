@@ -21,11 +21,13 @@
 		});
 
 		this.When(/^I click the button "([^"]*)"$/, function (arg1) {
-			pending();
+			client.click('#createWidget');
 		});
 
 		this.Then(/^I should see a widget named "([^"]*)"$/, function (arg1) {
-			pending();
+			browser.waitForExist('.widget-name');
+			var widgetName = client.getText('.widget-name');
+			expect(widgetName).toEqual("Alpha");
 		});
 
 	}
