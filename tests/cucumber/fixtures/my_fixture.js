@@ -1,13 +1,22 @@
 (function () {
 
-  'use strict';
+'use strict';
 
-  Meteor.methods({
-    'reset' : function() {
-      // you can do some resetting of your app here
-      // fixture code will only execute inside mirrors neither runs
-      // inside the main app nor gets bundled to production.
-    }
-  });
-
+Meteor.methods({
+	'reset' : function() {
+		// you can do some resetting of your app here
+		// fixture code will only execute inside mirrors neither runs
+		// inside the main app nor gets bundled to production.
+		Meteor.users.remove({});
+	},
+	
+	'addUser' : function (opts) {
+		Accounts.createUser({
+			email: opts.email,
+			password: opts.password ? opts.password : "testtest"
+		});
+	}
+	
+});
+	
 })();
