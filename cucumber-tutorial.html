@@ -9,6 +9,13 @@
 </body>
 
 <template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+  <div>
+    {{#if currentUser}}
+     <form id="createWidgetForm">
+       <input type="text" name="name" id="name" />
+       <button type="submit" name="submit" id="createWidget">Create Widget</button>
+     </form>
+   {{/if}}
+  </div>
+  
 </template>

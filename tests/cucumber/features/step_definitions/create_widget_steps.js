@@ -16,7 +16,8 @@
 		});
 
 		this.When(/^I fill in the name with "([^"]*)"$/, function (arg1) {
-			pending();
+			browser.waitForVisible('#name');
+			browser.setValue('#name', 'Alpha');
 		});
 
 		this.When(/^I click the button "([^"]*)"$/, function (arg1) {
